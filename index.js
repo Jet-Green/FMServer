@@ -1,11 +1,14 @@
 const express = require('express')
 
 const app = express()
+const cors = require('cors')
 
 const testOrderInfo = require('./data/order')
 
-app.post('/get-test-order-info', (request, response) => {
-    console.log(request.body);
+app.use(cors())
+
+
+app.post('/data/U_Orders/operationList', (request, response) => {
     response.send(testOrderInfo)
 })
 
